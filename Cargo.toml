@@ -1,0 +1,20 @@
+[package]
+name = "nu_plugin_cer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.38"
+data-encoding = "2.6.0"
+nu-plugin = "0.95.0"
+nu-protocol = "0.95.0"
+schannel = "0.1.23"
+sha1_smol = { version = "1.0.0", features = ["std"] }
+thiserror = "1.0.63"
+x509-parser = "0.16.0"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true
+codegen-units = 1
